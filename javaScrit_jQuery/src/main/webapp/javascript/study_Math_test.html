@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>수학 객체</title>
+</head>
+<body>
+<script>
+var select = prompt("가위, 바위, 보 중 선택하세요","가위");
+
+
+
+	
+	var tnum;
+	switch(select) {
+	case "가위": tnum=1;break;
+	case "바위": tnum=2; break;
+	case "보": tnum=3; break;
+	default : alert("잘 못 작성하셨습니다.");
+	//현재 위치에서 새로고침
+	location.reload();
+	
+	}
+	var ran =Math.floor(Math.random()*3)+1;
+
+
+	document.write("<img src='images/math_img_" + ran +".jpg'>");
+	//settimeout: 자바 Thread.sleep()과 동일, 정해진 시간이 지난후에 실해엎ㄹ
+	if(ran=tnum) 
+		setTimeout(function(){ alert("맞췄습니다! 축하합니다!"); }, 3000);
+	else
+		setTimeout(function(){ alert("틀렸습니다! 다음기회에!"); }, 3000);
+
+</script>
+
+</body>
+</html>
