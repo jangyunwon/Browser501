@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<img src="1.jpg" onclick="javascript:window.close();"></img>
+<p id="dog"></p>
+</body>
+<script>
+	window.onload = function(){
+		document.getElementById("dog").innerHTML =
+			"Browser inner window&nbsp"+"width: "+window.innerWidth+
+			", height: "+window.innerHeight;
+	};
+	
+</script>
+</html>

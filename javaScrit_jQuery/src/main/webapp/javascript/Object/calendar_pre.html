@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+<meta charset="UTF-8">
+<meta name= "viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Calendar with Vanilla Javascript</title>
+<style></style>
+</head>
+<body>
+	<div id="calendar"></div>
+	<script>
+	//오늘 날짜의 Data 객체를 생성합니다.
+	const today = new Date();
+	//달력 데이터를 가공하는 함수를 만듭니다.
+	const setCalendarData = (year,month)=>{}
+	// 빈 문자열을 만들어줍니다.
+	let calHtml = "";
+	//getMonth() : Get the month as a number(0-11)
+	//이번 달의 몇번 째 날짜인지 구하는 함수를 만듭니다.
+	const setFixDayCount = number => {
+		let fixNum ="";
+		if(number <= 10){
+			fixNum ="0"+(number-1);
+			
+		} else {
+			fixNum = number-1;
+		} return fixNum;
+	};
+	  //달력 데이터를 가공하는 함수에 년,월을 인자로 넘겨주어 실행합니다.
+	  if (today.getMonth() + 1 < 10) {
+	    setCalendarData(today.getFullYear(), "0" + (today.getMonth() + 1));
+	  } else {
+	    setCalendarData(today.getFullYear(), "" + (today.getMonth() + 1));
+	  }
+	</script>
+</body>
+</html>
