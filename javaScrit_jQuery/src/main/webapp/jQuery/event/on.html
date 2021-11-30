@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>Insert title here</title>
+<script>
+$(function() {
+	$("h1 a").on( {
+		"mouseover focus" : function() {
+		$(this).css("color","red");	
+		},"mouseout blur" : function(){
+			$(this).css("color","aqua");	
+		}
+		});
+	
+	//<h2>생성된 요소(mouseover:yellow, mouseout:aqua))</h2>
+	$("h2").append("<a href='#'>생성된 동적요소</a>");
+	$("h2 a").on("mouseover focus", function(){
+		$(this).css("color","yellow");
+	});
+	$("h2 a").on("mouseout blur", function(){
+		$(this).css("color","aqua");
+	});
+	
+});
+/* ※.on(events,selector,data,function()); 이런 형식으로 되어있습니다.
+			1       2      3      4
+2,3번은 있어도 그만 없어도 그만.
+
+1 = 이벤트들을 나열하면 된답니다. 하나이상의 이벤트를 나열하고싶을 때는
+공백으로 구문하면됩니다.
+예)'click mouseover'
+2 = 자손 요소들을 필터링 할때 사용합니다.
+예)':not(#aa)'
+3 = 이벤트가 발생했을때 전달하고 싶은 데이터값
+예) '{변수명 : 값}' 
+4 = 특정 이벤트가 발생했을때 실행될 함수를 지정하며 괄호안에는
+이벤트 객체가 매개변수로 전달되므로 이름을 지정해줘야한다.
+예) 'function(이름 아무거나)' 
+===============================
+$('div').on('click mouseover',{data1 :'값넘겨주기!',data2:'값넘겨주기@'},function(e){
+alert("안녕하세요. 제이쿼리공장장 주니주니입니다."+e.data.data1+e.data.data2);
+});
+=============================== */
+
+
+
+</script>
+</head>
+<body>
+<h1><a href="#">버튼</a></h1>
+<h2></h2>
+</body>
+</html>
