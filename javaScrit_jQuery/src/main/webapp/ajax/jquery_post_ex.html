@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>$.ajax로 jsp 파일 로드하기</title>
+<style>
+td {
+	border: 1px solid gray;
+}
+</style>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+	//get 도서관에서 책을 빌려 가져오는(GET)상황과 유사하게 GET은 어떠한 정보를 가져와서 조회하기 위해서 사용되는 방식
+	//post 정보를 제출하여(POST) 추가하기 위함입니다. 이러한 상황과 유사하게 POST 방식은 데이터를 서버로 제출하여 추가 또는 수정하기 위해서 사용하는 방식입니다
+
+
+$(function() {
+	$("#submit").click(function() {
+		var username = $(".username").val();
+		var sendData = "username="+username
+		$.post("source/welcom.jsp", username, function(msg) {
+			$("#message").html(msg);
+		}
+	);
+	});
+	
+});
+	
+</script>
+</head>
+<body>
+	<form>
+	<label>이름을 입력하세요:</label>
+	<input type="text" name ="username" class="username"><br>
+	<input type="button" id ="submit" value="전송"><br>
+	
+	</form>
+	<div id="message"></div>
+	
+</body>
+</html>
