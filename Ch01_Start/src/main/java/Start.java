@@ -9,15 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class Start
- */
+//1. annotation 방식 - 권장사항
 @WebServlet("/ch02_start/Start")
 public class Start extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
-	
+	//get 방식은 ?name=hong 
+	// 개별 서버 ?
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		response.setCharacterEncoding("utf-8");

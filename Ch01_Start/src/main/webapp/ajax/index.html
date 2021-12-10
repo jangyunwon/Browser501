@@ -9,53 +9,54 @@ $(function() {
 	$("#id01").on("click",function(){
 		alert("데이터 요청!");
 		$.ajax({
-			url: "dbfrom.jsp",
-			type: "get",
-			success: function(t){
-				$(t).find("person").each(function() {
-				var name = $(this).find("name").text();
-				var age = $(this).find("age").text();
-				var money = $(this).find("money").text();
-				
-				$("<h1></h1>").text(name+" "+age+" "+money).appendTo("body");
-
+			url:'dbfrom.jsp',
+			type:'get',
+			success:function(t){
+ 				$(t).find("person").each(function() {
+ 					var name = $(this).find('name').text();
+			        var age = $(this).find('age').text();
+			        var salary = $(this).find('salary').text();
+			
+			        $("<h1></h1>").text(name+" "+age+" "+salary).appendTo('body');
 				});
 				
-				
 			},
-			error : function() {
+			error: function(){
 				alert("실패!");
 			}
-			
 		});
 	});
+	
 	$("#id02").on("click",function(){
 		alert("데이터 전송!");
 		$.ajax({
-			url: "dbto.jsp",
-			type: "post",
-			data : {
-				name = $("#name1").val(),
-				age = $("#age1").val(),
-				money = $("#money1").val()
+			url:"dbto.jsp",
+			type:"post",
+			data:{
+				name: $("#name1").val(),
+				age : $("#age1").val(),
+				salary : $("#salary1").val()	
 			},
-			success: function(){
+			success:function(){
 				alert("성공!");
 			},
-			error : function() {
+			error:function(){
 				alert("실패!");
 			}
+			
 			
 		});
 	});
 });
 </script>
+
 </head>
 <body>
-<button id="id01">데이터 요청(Select_dbfrom)</button><br><br>
-이름 : <input type="text" name ="name" id="name1" ><br>
-나이 : <input type="text" name ="age" id="age1" ><br>
-급여 : <input type="text" name ="money" id="money1" ><br>
+<button id="id01">데이터요청(Select_dbfrom)</button><br><br>
+이름: <input type="text"  id="name1"><br>
+나이: <input type="text"  id="age1"><br>
+금액: <input type="text"  id="salary1"><br>
 <button id="id02">DB전송(Insert_dbto)</button><br><br>
+
 </body>
 </html>
